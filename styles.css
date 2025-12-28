@@ -946,11 +946,21 @@ h6 {
     }
 
     .nav-links {
-        gap: var(--spacing-sm);
+        gap: 0.75rem;
+        /* Reduced gap */
     }
 
-    .nav-links a:not(.btn-secondary) {
-        display: none;
+    .nav-links a {
+        display: block;
+        /* Ensure visibility */
+        font-size: 0.85rem;
+        /* Smaller font text */
+    }
+
+    .nav-links .btn-primary {
+        padding: 0.5rem 0.8rem;
+        /* Compact button padding */
+        font-size: 0.85rem;
     }
 
     .hero-title {

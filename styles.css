@@ -654,6 +654,166 @@ h6 {
     border-top: 1px solid var(--color-border);
 }
 
+/* Visual Proof Section */
+.visual-proof {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Aligns items to top so text length doesn't stretch image alignment oddly */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    flex-wrap: nowrap;
+    /* Force side-by-side on desktop/tablet */
+}
+
+.comparison-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: var(--spacing-sm);
+    /* Reduced padding for compactness */
+    max-width: 300px;
+    /* Reduced width as requested */
+    width: 100%;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+    aspect-ratio: 9 / 16;
+    width: 100%;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    /* Slightly smaller text */
+    color: white;
+    text-align: center;
+}
+
+.img-label.bad {
+    background: rgba(220, 53, 69, 0.9);
+}
+
+.img-label.good {
+    background: rgba(40, 167, 69, 0.9);
+}
+
+.comparison-text {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.comparison-text strong {
+    color: var(--color-text-primary);
+    display: block;
+    margin-top: 5px;
+}
+
+.comparison-arrow {
+    align-self: center;
+    /* Keep arrow vertically centered */
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    font-weight: 800;
+    margin: 0 var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+/* Reality Check Section */
+.reality-check {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.reality-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.body-large {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.benefits-list {
+    list-style: none;
+    text-align: left;
+    margin-top: var(--spacing-md);
+    display: inline-block;
+}
+
+.benefits-list li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--color-text-secondary);
+}
+
+/* Pulse Animation for CTA */
+@keyframes pulse-blue {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 162, 189, 0.7);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(72, 162, 189, 0);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 162, 189, 0);
+        transform: scale(1);
+    }
+}
+
+.btn-primary.pulse {
+    animation: pulse-blue 2s infinite;
+}
+
+.center-cta {
+    margin-top: var(--spacing-lg);
+}
+
+.center-cta .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+}
+
 .cta-content {
     max-width: 700px;
     margin: 0 auto;
@@ -803,6 +963,21 @@ h6 {
 
     .section-title {
         font-size: 1.75rem;
+    }
+
+    .comparison-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comparison-arrow {
+        transform: rotate(90deg);
+        margin: var(--spacing-sm) 0;
+    }
+
+    .comparison-card {
+        max-width: 320px;
+        /* On mobile, let it be full comfortable width */
     }
 
     .pricing-card.featured {
